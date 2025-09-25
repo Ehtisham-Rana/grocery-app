@@ -1,5 +1,6 @@
 import pool from "../config/db.js";
 
+// Create  new Items in Basket
 export const basketModel = async (itemData) => {
     const client = await pool.connect();
 
@@ -16,3 +17,17 @@ export const basketModel = async (itemData) => {
         client.release();
     }
 } ;
+
+// Get All Items in Basket
+export const getBasketItemsModel  = async () => {
+    const client = await pool.connect();
+
+    try {
+        const result = await client.query("SELECT * FROM basket_items");
+        return result.rows;
+    } catch (error) {
+        console.error("Error fetching items", error);
+    } finally {
+        client.release();
+    }
+}
