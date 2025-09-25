@@ -1,4 +1,145 @@
-*{
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
     margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #666;
+    margin: 5px 0;
+}
+
+.add-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#grocery-input {
+    flex-grow: 1;
+    border: none;
+    padding: 10px;
+    font-size: 1em;
+    background: transparent;
+    outline: none;
+}
+
+#add-btn {
+    background-color: #5a5a5a;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#add-btn:hover {
+    background-color: #4a4a4a;
+}
+
+.list-summary {
+    text-align: left;
+    color: #555;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+#grocery-list {
+    list-style: none;
     padding: 0;
+    margin: 0;
+}
+
+.grocery-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.item-details {
+    flex-grow: 1;
+    text-align: left;
+    margin-left: 15px;
+}
+
+.item-name {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.item-qty {
+    color: #666;
+    font-size: 0.9em;
+}
+
+.item-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.qty-controls, .delete-btn {
+    display: flex;
+    align-items: center;
+}
+
+.qty-controls button, .delete-btn button {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s;
+}
+
+.qty-controls button:hover {
+    background-color: #d0d0d0;
+}
+
+.delete-btn button {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.delete-btn button:hover {
+    background-color: #d32f2f;
+}
+
+.tip {
+    font-size: 0.8em;
+    color: #888;
+    margin-top: 20px;
 }

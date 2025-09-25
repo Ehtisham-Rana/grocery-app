@@ -3,15 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Grocery List</title>
     <link rel="stylesheet" href="style.css">
-    <title>Grocery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <h1>Grocery List</h1>
-    <p>Manage your shopping list with ease</p>
-    <p>Total items to buy: 0</p>
-    <input type="text" name="items" id="items" placeholder="Enter Grocery Items...">
-    <button type="button"></button>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-shopping-cart"></i> Grocery List</h1>
+            <p>Manage your shopping list with ease</p>
+            <p>Total items to buy: <span id="total-items">0</span></p>
+        </header>
+
+        <section class="add-item">
+            <input type="text" id="grocery-input" placeholder="Enter grocery item...">
+            <button id="add-btn"><i class="fas fa-plus"></i></button>
+        </section>
+
+        <section class="list-summary">
+            <p><span id="list-count">0</span> items in your list</p>
+        </section>
+
+        <ul id="grocery-list">
+            </ul>
+
+        <p class="tip">Tip: Use the - and + buttons to adjust quantities, or the trash button to remove items</p>
+    </div>
+    <script src=""></script>
 </body>
 </html>
