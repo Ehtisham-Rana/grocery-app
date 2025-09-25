@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 //Routes
-app.use("/api",basketRoute);
+app.use("/api/basket",basketRoute);
 
 
 app.listen(PORT, () => {

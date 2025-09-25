@@ -1,4 +1,4 @@
-import { basketModel,getBasketItemsModel } from "../models/basketModel.js";
+import { basketModel, getBasketItemsModel, deleteBasketItemByIdModel } from "../models/basketModel.js";
 import handleResponse from "../utils/utils.js";
 
 export const createBasket = async(req, res, next) => {
@@ -11,11 +11,11 @@ export const getAllBasketItems = async(req, res, next) => {
     handleResponse(res, 200, "New Item Created", item)
 };
 
-// export const getBasketItemById = async (req, res, next) => {
-//   const user = await getBasketItems(req.params.id);
-//   if (user) {
-//     handleResponse(res, 200, "User fetched successfully", user);
-//   } else {
-//     handleResponse(res, 404, "User record not found!", user);
-//   }
-// };
+export const deleteBasketItemById = async (req, res, next) => {
+  const item = await deleteBasketItemByIdModel(req.params.id);
+  if (item) {
+    handleResponse(res, 200, "Item deleted successfully", item);
+  } else {
+    handleResponse(res, 404, "Item record not found!", item);
+  }
+};

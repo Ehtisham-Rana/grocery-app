@@ -1,10 +1,11 @@
 import express from "express";
-import { createBasket, getAllBasketItems } from "../controllers/basketController.js";
+import { createBasket, getAllBasketItems , deleteBasketItemById } from "../controllers/basketController.js";
 
 
 const router = express.Router();
 
-router.post("/basket/items",createBasket);
-router.get("/basket/items",getAllBasketItems);
+router.post("/items",createBasket);
+router.get("/items",getAllBasketItems);
+router.delete("/items/:id",deleteBasketItemById);
 
 export default router;

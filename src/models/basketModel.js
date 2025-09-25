@@ -31,3 +31,19 @@ export const getBasketItemsModel  = async () => {
         client.release();
     }
 }
+
+// Delete Items by ID in Basket
+export const deleteBasketItemByIdModel  = async (id) => {
+    const client = await pool.connect();
+
+    try {
+        const result = await client.query("DELETE FROM basket_items WHERE id = $1 RETURNING *",
+            [id]
+        );
+        return result.rows[0];
+    } catch (error) {
+        console.error("Error fetching items", error);
+    } finally {
+        client.release();
+    }
+}
